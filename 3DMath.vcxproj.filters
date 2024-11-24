@@ -1,0 +1,141 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="shaders">
+      <UniqueIdentifier>{b2ad27d0-00c7-40fd-be9a-64e4e142711b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Script Files">
+      <UniqueIdentifier>{bee72af7-d777-41b2-81d8-88517fc71aad}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="shaders\NoTexture">
+      <UniqueIdentifier>{44fd7be3-85d9-4e60-8baf-4808d5e3edf8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="shaders\Texture">
+      <UniqueIdentifier>{08b3157c-8f83-4560-9767-5e930de6b567}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="shaders\Text">
+      <UniqueIdentifier>{4574ec18-b305-4cbe-918a-5cfb773bcd5c}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="scripts\FlowControl.cpp">
+      <Filter>Script Files</Filter>
+    </ClCompile>
+    <ClCompile Include="scripts\Input.cpp">
+      <Filter>Script Files</Filter>
+    </ClCompile>
+    <ClCompile Include="scripts\ProgramControl.cpp">
+      <Filter>Script Files</Filter>
+    </ClCompile>
+    <ClCompile Include="scripts\Objects.cpp">
+      <Filter>Script Files</Filter>
+    </ClCompile>
+    <ClCompile Include="scripts\Main.cpp">
+      <Filter>Script Files</Filter>
+    </ClCompile>
+    <ClCompile Include="scripts\Text.cpp">
+      <Filter>Script Files</Filter>
+    </ClCompile>
+    <ClCompile Include="scripts\IntializeShader.cpp">
+      <Filter>Script Files</Filter>
+    </ClCompile>
+    <ClCompile Include="scripts\GlobalScripts.cpp">
+      <Filter>Script Files</Filter>
+    </ClCompile>
+    <ClCompile Include="scripts\ProgUI.cpp">
+      <Filter>Script Files</Filter>
+    </ClCompile>
+    <ClCompile Include="glad\src\glad.c">
+      <Filter>Header Files</Filter>
+    </ClCompile>
+    <ClCompile Include="scripts\textureLoading.cpp">
+      <Filter>Header Files</Filter>
+    </ClCompile>
+    <ClCompile Include="scripts\sound.cpp">
+      <Filter>Script Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="shaders\NTVertexShader.vert">
+      <Filter>shaders\NoTexture</Filter>
+    </None>
+    <None Include="shaders\NTFragmentShader.frag">
+      <Filter>shaders\NoTexture</Filter>
+    </None>
+    <None Include="shaders\TVertexShader.vert">
+      <Filter>shaders\Texture</Filter>
+    </None>
+    <None Include="shaders\TFragmentShader.frag">
+      <Filter>shaders\Texture</Filter>
+    </None>
+    <None Include="shaders\TextVertexShader.vert">
+      <Filter>shaders\Text</Filter>
+    </None>
+    <None Include="shaders\TextFragmentShader.frag">
+      <Filter>shaders\Text</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="scripts\FlowControl.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="scripts\GlobalVars.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="scripts\Input.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="scripts\IntializeShader.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="scripts\MathConstants.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="scripts\OpenGL.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="scripts\ProgramControl.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="scripts\Shapes.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="scripts\TypeDefs.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="scripts\Objects.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="scripts\Vector.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="scripts\Constants.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="scripts\ObjScripts.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="scripts\Text.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="scripts\GlobalScripts.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="scripts\ProgUI.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="scripts\textureLoading.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="scripts\soundLoading.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="scripts\Camera.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>
