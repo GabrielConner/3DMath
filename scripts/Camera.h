@@ -29,18 +29,18 @@ struct Camera {
 
     void setViewMatrix() {
         viewMatrix = glm::mat4(1);
-        viewMatrix = glm::rotate(viewMatrix, rotation.x * (float)degToRad, glm::vec3(1, 0, 0));
-        viewMatrix = glm::rotate(viewMatrix, rotation.y * (float)degToRad, glm::vec3(0, 1, 0));
-        viewMatrix = glm::rotate(viewMatrix, rotation.z * (float)degToRad, glm::vec3(0, 0, 1));
+        viewMatrix = glm::rotate(viewMatrix, rotation.x * (float)_degToRad, glm::vec3(1, 0, 0));
+        viewMatrix = glm::rotate(viewMatrix, rotation.y * (float)_degToRad, glm::vec3(0, 1, 0));
+        viewMatrix = glm::rotate(viewMatrix, rotation.z * (float)_degToRad, glm::vec3(0, 0, 1));
         viewMatrix = glm::translate(viewMatrix, glm::vec3(-position.x, position.y, position.z));
     }
 
     Vec3 directionFacing() {
         Vec3 ret;
         
-        ret.x = cos(degToRad * (rotation.y - 90)) * cos(degToRad * rotation.x);
-        ret.y = sin(degToRad * rotation.x);
-        ret.z = cos(degToRad * rotation.x) * sin(degToRad * (rotation.y + 90));
+        ret.x = cos(_degToRad * (rotation.y - 90)) * cos(_degToRad * rotation.x);
+        ret.y = sin(_degToRad * rotation.x);
+        ret.z = cos(_degToRad * rotation.x) * sin(_degToRad * (rotation.y + 90));
 
         return ret;
     }

@@ -167,7 +167,7 @@ void createTextTexture(uint& texture, float fontSize, float lineSize, Vec2 size,
 	cChar curChar;
 	float ratio = size.x / size.y;
 
-    if (text == "" || font == "" || fontSize == 0 || size.x == 0 || size.y == 0 || mode > 2) {
+    if (font == "" || fontSize == 0 || size.x == 0 || size.y == 0 || mode > 2) {
         return;
     }
 

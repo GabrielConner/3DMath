@@ -20,6 +20,9 @@
     <Filter Include="shaders\Text">
       <UniqueIdentifier>{4574ec18-b305-4cbe-918a-5cfb773bcd5c}</UniqueIdentifier>
     </Filter>
+    <Filter Include="shaders\Equations">
+      <UniqueIdentifier>{94e3c756-6381-4233-8317-149d0d8af662}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="scripts\FlowControl.cpp">
@@ -52,10 +55,10 @@
     <ClCompile Include="glad\src\glad.c">
       <Filter>Header Files</Filter>
     </ClCompile>
-    <ClCompile Include="scripts\textureLoading.cpp">
-      <Filter>Header Files</Filter>
-    </ClCompile>
     <ClCompile Include="scripts\sound.cpp">
+      <Filter>Script Files</Filter>
+    </ClCompile>
+    <ClCompile Include="scripts\textureLoading.cpp">
       <Filter>Script Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -77,6 +80,12 @@
     </None>
     <None Include="shaders\TextFragmentShader.frag">
       <Filter>shaders\Text</Filter>
+    </None>
+    <None Include="shaders\MathVertexShader.vert">
+      <Filter>shaders\Equations</Filter>
+    </None>
+    <None Include="shaders\MathFragmentShader.frag">
+      <Filter>shaders\Equations</Filter>
     </None>
   </ItemGroup>
   <ItemGroup>
@@ -135,6 +144,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="scripts\Camera.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="scripts\Main.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

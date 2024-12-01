@@ -35,6 +35,7 @@ void start() {
 
 	addShader("noTextureShader", "./shaders/NTVertexShader.vert", "./shaders/NTFragmentShader.frag");
 	addShader("textureShader", "./shaders/TVertexShader.vert", "./shaders/TFragmentShader.frag");
+	addShader("mathShader", "./shaders/MathVertexShader.vert", "./shaders/MathFragmentShader.frag");
 
     stbi_set_flip_vertically_on_load(true);
 

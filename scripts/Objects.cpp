@@ -24,6 +24,8 @@ const float* _identityMatrix = nullptr;
 
 bool _showUI = true;
 
+float xDist;
+
 namespace Objects {
 	//Creates default objects
     void start() {
@@ -94,7 +96,7 @@ Object* instantiateObj(std::string objName) {
 }
 
 //Creates the buffers for an object
-void createBufferObj(uint& VBO, uint& EBO, const float vertices[], const uint indices[], const size_t vertSize, const size_t indiceSize) {
+void createBufferObj(uint& VBO, uint& EBO, const float* vertices, const uint* indices, const size_t vertSize, const size_t indiceSize) {
 	glCreateBuffers(1, &VBO);
 	glBindBuffer(GL_ARRAY_BUFFER, VBO);
 	glBufferData(GL_ARRAY_BUFFER, vertSize, vertices, GL_STATIC_DRAW);
@@ -339,9 +341,9 @@ glm::mat4 createObjTransform(Object* obj) {
     
     glm::mat4 ret = glm::mat4(1);
     ret = glm::translate(ret, obj->transform.position.toGLM());
-    ret = glm::rotate(ret, (float)degToRad * obj->transform.rotation.x, glm::vec3(1, 0, 0));
-    ret = glm::rotate(ret, (float)degToRad * obj->transform.rotation.y, glm::vec3(0, 1, 0));
-    ret = glm::rotate(ret, (float)degToRad * obj->transform.rotation.z, glm::vec3(0, 0, 1));
+    ret = glm::rotate(ret, (float)_degToRad * obj->transform.rotation.x, glm::vec3(1, 0, 0));
+    ret = glm::rotate(ret, (float)_degToRad * obj->transform.rotation.y, glm::vec3(0, 1, 0));
+    ret = glm::rotate(ret, (float)_degToRad * obj->transform.rotation.z, glm::vec3(0, 0, 1));
     ret = glm::scale(ret, obj->transform.scale.toGLM());
 
     return ret;
@@ -406,7 +408,23 @@ void drawAllObjs() {
         }
 
         _transform = createObjTransform(obj);
-        if (obj->usesTexture()) {
+        if (obj->math) {
+            shader.use(getShader("mathShader"));
+            if (!obj->UI) {
+                shader.setMat4("view", MainCamera.viewMatrix);
+                shader.setMat4("projection", MainCamera.perspectiveView);
+            }
+            else {
+                shader.setMat4("projection", MainCamera.orthographicView);
+                shader.setMat4("view", _identityMatrix);
+            }
+            shader.setMat4("transform", _transform);
+            shader.setVec4("color", obj->color);
+            shader.setInt("texTarget", 0);
+            shader.setFloat("xDist", xDist);
+
+
+        } else if (obj->usesTexture()) {
             uint texTarget = obj->getTexture();
             shader.use(getShader("textureShader"));
             if (!obj->UI) {
@@ -423,8 +441,7 @@ void drawAllObjs() {
             shader.setInt("texTarget", 0);
             glActiveTexture(GL_TEXTURE0);
             glBindTexture(GL_TEXTURE_2D, texTarget);
-        }
-        else {
+        } else {
             shader.use(getShader("noTextureShader"));
             if (!obj->UI) {
                 shader.setMat4("view", MainCamera.viewMatrix);

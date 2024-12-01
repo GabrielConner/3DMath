@@ -72,7 +72,7 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
-    <OutDir>$(SolutionDir)..\Builds\BasicApp3DBuilds\</OutDir>
+    <OutDir>$(SolutionDir)..\Builds\3DMathBuilds\</OutDir>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
@@ -169,6 +169,8 @@ xcopy $(ProjectDir)*.dll $(OutDir) /y</Command>
     <ClCompile Include="scripts\textureLoading.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="shaders\MathFragmentShader.frag" />
+    <None Include="shaders\MathVertexShader.vert" />
     <None Include="shaders\NTFragmentShader.frag" />
     <None Include="shaders\NTVertexShader.vert" />
     <None Include="shaders\TextFragmentShader.frag" />
@@ -179,6 +181,7 @@ xcopy $(ProjectDir)*.dll $(OutDir) /y</Command>
   <ItemGroup>
     <ClInclude Include="scripts\Camera.h" />
     <ClInclude Include="scripts\GlobalScripts.h" />
+    <ClInclude Include="scripts\Main.h" />
     <ClInclude Include="scripts\ObjScripts.h" />
     <ClInclude Include="scripts\Constants.h" />
     <ClInclude Include="scripts\Objects.h" />

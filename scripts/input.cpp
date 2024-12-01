@@ -77,7 +77,7 @@ namespace keyAction {
 	}
 
 	void buildText(std::string& text) {
-		if (allButtons[GLFW_KEY_BACKSPACE].pressed && text.length())		text.pop_back();
+		if (allButtons[GLFW_KEY_BACKSPACE].pressed && text.length())		        text.pop_back();
 		if (allButtons[GLFW_KEY_SPACE].pressed)										text += ' ';
 		if (allButtons[GLFW_KEY_ENTER].pressed)										text += '\n';
 		if (allButtons[GLFW_KEY_TAB].pressed)										text += '\t';
@@ -107,7 +107,7 @@ namespace keyAction {
 		if (allButtons[GLFW_KEY_X].pressed)											if (shift) text += 'X'; else text += 'x';
 		if (allButtons[GLFW_KEY_Y].pressed)											if (shift) text += 'Y'; else text += 'y';
 		if (allButtons[GLFW_KEY_Z].pressed)											if (shift) text += 'Z'; else text += 'z';
-		if (allButtons[GLFW_KEY_APOSTROPHE].pressed)								if (shift) text += '\"'; else text += '\'';
+		if (allButtons[GLFW_KEY_APOSTROPHE].pressed)								if (shift) text += '"'; else text += '\'';
 		if (allButtons[GLFW_KEY_COMMA].pressed)										if (shift) text += '<'; else text += ',';
 		if (allButtons[GLFW_KEY_MINUS].pressed)										if (shift) text += '_'; else text += '-';
 		if (allButtons[GLFW_KEY_PERIOD].pressed)									if (shift) text += '>'; else text += '.';

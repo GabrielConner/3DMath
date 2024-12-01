@@ -56,6 +56,7 @@ struct Object : private ObjectBase {
     bool scriptCreated = false;
     bool UI = false;
     bool weak = false;
+    bool math = false;
     
 
     Object& operator=(Object* obj) {

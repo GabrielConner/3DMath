@@ -416,7 +416,6 @@ struct TextField : public ButtonMain {
 		giveKeyAction::setIgnore(false);
 		if (keyAction::keyPressed(GLFW_KEY_ESCAPE)) {
 			insideOf = false;
-			_hideMouse = false;
 			_lockMouse = false;
 		}
 
@@ -437,7 +436,6 @@ struct TextField : public ButtonMain {
 	}
 
 	void onPressed() override {
-		_hideMouse = true;
 		_lockMouse = true;
 		insideOf = true;
 	}

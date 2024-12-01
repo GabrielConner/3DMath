@@ -1,3 +1,4 @@
+#define STB_IMAGE_IMPLEMENTATION
 #include "textureLoading.h"
 
 bool loadTexture(std::string name, unsigned int& textureOut, int& width, int& height) {
