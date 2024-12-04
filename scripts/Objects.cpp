@@ -25,6 +25,7 @@ const float* _identityMatrix = nullptr;
 bool _showUI = true;
 
 float xDist;
+bool colorChange = true;
 
 namespace Objects {
 	//Creates default objects
@@ -422,6 +423,7 @@ void drawAllObjs() {
             shader.setVec4("color", obj->color);
             shader.setInt("texTarget", 0);
             shader.setFloat("xDist", xDist);
+            shader.setUint("colorChange", colorChange);
 
 
         } else if (obj->usesTexture()) {

@@ -31,6 +31,7 @@ uint graphResolution = 200;
 
 float xMin = 0;
 extern float xDist;
+extern bool colorChange;
 float volumeAngle = 360;
 float tubeThickness = 0.04f;
 
@@ -118,6 +119,7 @@ void increMaxFunc() {
     else
         xDist += 0.5f;
 }
+
 void decreMaxFunc() {
     if (keyAction::getShift())
         xDist -= 0.01f;
@@ -126,6 +128,7 @@ void decreMaxFunc() {
     else
         xDist -= 0.5f;
 }
+
 void increMinFunc() {
     if (keyAction::getShift())
         xMin += 0.01f;
@@ -134,6 +137,7 @@ void increMinFunc() {
     else
         xMin += 0.5f;
 }
+
 void decreMinFunc() {
     if (keyAction::getShift())
         xMin -= 0.01f;
@@ -142,6 +146,7 @@ void decreMinFunc() {
     else
         xMin -= 0.5f;
 }
+
 void increThickFunc() {
     if (keyAction::getShift())
         tubeThickness += 0.01f;
@@ -150,6 +155,7 @@ void increThickFunc() {
     else
         tubeThickness += 0.5f;
 }
+
 void decreThickFunc() {
     if (keyAction::getShift())
         tubeThickness -= 0.01f;
@@ -472,6 +478,9 @@ void progMain() {
         MainCamera.position += MainCamera.directionFacing() * 10.f * _deltaTime;
     if (keyAction::keyHeld(GLFW_KEY_S))
         MainCamera.position += MainCamera.directionFacing() * -10.f * _deltaTime;
+
+    if (keyAction::keyPressed(GLFW_KEY_SPACE))
+        colorChange = !colorChange;
 
     if (keyAction::keyPressed(GLFW_KEY_T))
         _hideMouse = !_hideMouse;
